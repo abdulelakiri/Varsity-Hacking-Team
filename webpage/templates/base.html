@@ -41,27 +41,8 @@
           </div>
         </div>
       </nav>
-      <table class="table">
-        <thead>
-          <tr>
-            <th class="text-base" style="text-align: center;">Incoming Tweet</th>
-            <th class="text-success" style="text-align: center;">Real Percentage</th>
-            <th class="text-danger" style="text-align: center;">False Percentage</th>
-            <th style="text-align: center;">
-              <button type="button" class="btn btn-success" >Accurate Information</button>
-            </th>
-            <th style="text-align: center;">
-              <button type="button" class="btn btn-danger" >False Information</button>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-    
-        </tbody>
-      </table>
     </div>
   </div>
-
   <div class="content">
     <!-- Define block content location to easily replace contents of page -->
     {% block content %}
@@ -81,7 +62,25 @@
         </div>
       </div>
     </div>
-
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="text-base" style="text-align: center;">Incoming Tweet</th>
+          <th class="text-success" style="text-align: center;">Real Percentage</th>
+          <th class="text-danger" style="text-align: center;">False Percentage</th>
+          <th style="text-align: center;">
+            <button type="button" class="btn btn-success" >Accurate Information</button>
+          </th>
+          <th style="text-align: center;">
+            <button type="button" class="btn btn-danger" >False Information</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+  
+      </tbody>
+    </table>
+  
     <div class="container py-5">
       <h1>Thanks</h1>
       <p>Thank you for downloading this theme. If you have trouble or find a bug, please open an issue on GitHub:<br>
