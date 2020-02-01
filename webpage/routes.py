@@ -9,6 +9,10 @@ def homepage():
 @home.route('/form')
 def form():
     return render_template('form.html',title='Form')
+    
+@home.route('/tables')
+def form():
+    return render_template('table.html',title='Table')
 
 @home.errorhandler(404)
 def page_not_found(e):
