@@ -1,0 +1,89 @@
+<!-- Base template used by all pages. contents within blockcontent are replaced according to route requested. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Determine title of page if any, else use default title -->
+  {% if title %}
+  <title>Flask-Template - {{ title }}</title>
+  {% else %}
+  <title>Flask-Template</title>
+  {% endif %}
+  <!-- link stylesheets using url_for to print css sylesheet location -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='businesstycoon_css/bootstrap4-business-tycoon.css') }}">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+
+<body>
+
+  <div class="bg-dark text-white navbar-dark">
+    <div class="container">
+      <nav class="navbar px-0 navbar-expand-lg navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <!-- link page using url_for to print url location for DBD_request -->
+              <a href="{{ url_for('site.form') }}"
+              class="pl-md-0 p-3 text-white">Form</a>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+
+  <div class="content">
+    <!-- Define block content location to easily replace contents of page -->
+    {% block content %}
+
+    <div class="jumbotron bg-dark text-white mb-0">
+      <div class="container">
+        <h1 class="display-3 text-light">Business Tycoon</h1>
+        <div class="lead mb-3">This is a starter template with a jumbotron.</div>
+        <div class="mt-4">
+          <a href="#!" class="btn btn-primary btn-lg my-2 mr-2">
+            <span>A button</span>
+          </a>
+          <a href="#!" class="btn btn-outline-light btn-hover-text-light btn-lg my-2">
+            <span>Another button</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-5">
+      <h1>Thanks</h1>
+      <p>Thank you for downloading this theme. If you have trouble or find a bug, please open an issue on GitHub:<br>
+        <a href="https://github.com/HackerThemes/theme-machine">https://github.com/HackerThemes/theme-machine</a></p>
+    </div>
+    {% endblock %}
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+
+</body>
+
+</html>

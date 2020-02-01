@@ -1,0 +1,15 @@
+<!-- Imports base layout from 'base.html' -->
+{% extends 'base.html' %}
+
+<!-- Replaces block content in base layout -->
+{% block content %}
+
+<div class="jumbotron bg-dark text-white mb-0">
+    <div class="container">
+        <h1 class="display-3 text-light">Error 404: These are unchartered waters.</h1>
+        <div class="lead mb-3">Sorry, the requested page cannot be found.</div>
+        <div class="lead mb-3">Please <a href={{ url_for('site.homepage') }}>Click Here</a> to return to the homepage
+    </div>
+</div>
+
+{% endblock %}

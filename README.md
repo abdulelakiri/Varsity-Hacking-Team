@@ -1,0 +1,1 @@
+Template created to help bootstrap Flask webserver projects.
