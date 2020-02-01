@@ -10,8 +10,8 @@ def homepage():
 def form():
     return render_template('form.html',title='Form')
     
-@home.route('/tables')
-def form():
+@home.route('/table')
+def table():
     return render_template('table.html',title='Table')
 
 @home.errorhandler(404)
