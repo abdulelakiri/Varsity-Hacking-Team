@@ -13,12 +13,15 @@
   {% else %}
   <title>Flask-Template</title>
   {% endif %}
-  <!-- link stylesheets using url_for to print css sylesheet location -->
+  <!-- link stylesheets using url_for to print css stylesheet location -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ url_for('static', filename='businesstycoon_css/bootstrap4-business-tycoon.css') }}">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
   <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
 </head>
 
 
@@ -55,35 +58,14 @@
       </div>
     </div>
     <div class="container border mt-4 ">
-      <div class="container mx-auto mt-4" style="width: 1100px;"> 
-        <table class="table table-bordered table-hover" style="text-align: center;">
-          <thead>
-            <tr>
-              <th class="text-base" colspan="1">Incoming Tweet</th>
-              <th class="text-base" colspan="2">Tweet Legitimacy</th>
-              <th class="text-base" colspan="2">Information Accuracy</th>          
-            </tr>
-          </thead>
-          <tbody>
-            <td class="text-base" style="text-align: center;" colspan="1" width="700">Smith's Feet</td>
-            <td class="text-base" style="text-align: center;" colspan="1"> 100%</td>
-            <td class="text-base" style="text-align: center;" colspan="1" >0%</td>
-            <td class="text-base" style="text-align: center;" colspan="1" width="100">
-              <button type="button" class="btn btn-success">Accurate</button>
-            </td>
-            <td class="text-base" style="text-align: center;" colspan="1" width="100">
-              <button type="button" class="btn btn-danger">False</button>
-            </td>
-          </tbody>
-        </table>
-      </div>
+      <div id="mapid"></div>
     </div>    
     {% endblock %}
   </div>
 
 
   <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS , finally leaflet JS-->
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -93,6 +75,9 @@
   </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin="">
   </script>
 
 </body>

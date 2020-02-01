@@ -10,6 +10,10 @@ def homepage():
 def table():
     return render_template('table.html',title='Table')
 
+@home.route('/heatmap')
+def heatmap():
+    return render_template('heatmap.html',title='Heatmap')
+
 @home.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html', title= 'Error 404'), 404
