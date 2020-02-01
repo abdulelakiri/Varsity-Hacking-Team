@@ -100,19 +100,19 @@
       accessToken: mbToken
     });
 
-    var baseLayers = { 
-      'grayscale': grayscale,
-      'streets': streets,
-      'satellite': satellite
+    var baseLayers = {       
+      'Streets': streets,
+      'Satellite': satellite,
+      'Grayscale': grayscale
     };
     
     var mymap = L.map('mapid', {
-        center: [39.73, -104.99],
-        zoom: 18,
+        center: [44.23, -76.48],
+        zoom: 12,
         layers: streets
     });
 
-    L.control.Layers(baseLayers).addTo(mymap);
+    L.control.layers(baseLayers).addTo(mymap);
   </script>
 
 </body>
