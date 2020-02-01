@@ -25,7 +25,7 @@
 </head>
 
 
-<body>
+<body style="overflow: scroll;">
 
   <div class="bg-dark text-white navbar-dark">
     <div class="container">
@@ -57,8 +57,8 @@
         </div>        
       </div>
     </div>
-    <div class="container border mt-4 ">
-      <div id="mapid" style="height: 400px; width: 1000px; margin: auto;"></div>
+    <div class="container border mt-4 mb-5 ">
+      <div id="mapid" style="height: 600px; width: 1000px; margin: auto;"></div>
     </div>    
     {% endblock %}
   </div>
@@ -80,13 +80,39 @@
     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin="">
   </script>
   <script>
-    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox/streets-v11',
-        accessToken: 'pk.eyJ1Ijoicm9uYWxkOTh5IiwiYSI6ImNrNjN6ajdxaTBmYzUzcGxoc3l3aXdqMDQifQ.RzcSaJP8F3Cy4-fvfVk1hA'
-    }).addTo(mymap);
+    var mbURL = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}';
+    var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+    var mbToken = 'pk.eyJ1Ijoicm9uYWxkOTh5IiwiYSI6ImNrNjN6ajdxaTBmYzUzcGxoc3l3aXdqMDQifQ.RzcSaJP8F3Cy4-fvfVk1hA';
+
+    var grayscale = L.tileLayer(mbURL,{
+      id: 'mapbox/light-v9', 
+      attribution: mbAttr,
+      accessToken: mbToken
+    }),
+      satellite = L.tileLayer(mbURL,{
+      id: 'mapbox/satellite-v9', 
+      attribution: mbAttr,
+      accessToken: mbToken
+    }),
+      streets = L.tileLayer(mbURL,{
+      id: 'mapbox/streets-v11', 
+      attribution: mbAttr,
+      accessToken: mbToken
+    });
+
+    var baseLayers = { 
+      'grayscale': grayscale,
+      'streets': streets,
+      'satellite': satellite
+    };
+    
+    var mymap = L.map('mapid', {
+        center: [39.73, -104.99],
+        zoom: 18,
+        layers: streets
+    });
+
+    L.control.Layers(baseLayers).addTo(mymap);
   </script>
 
 </body>
