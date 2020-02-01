@@ -1,4 +1,4 @@
 steps:
 - name: "gcr.io/cloud-builders/gcloud"
-  args: ["app", "deploy", "--project=Qhacks2020-VHT"]
+  args: ["app", "deploy", "--project=qhacks2020-vht"]
 timeout: "1600s"
