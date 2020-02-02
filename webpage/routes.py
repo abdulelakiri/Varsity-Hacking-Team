@@ -5,10 +5,6 @@ home = Blueprint('site',__name__, template_folder='templates')
 @home.route('/')
 def homepage():
     return render_template('base.html',title='Homepage')
-   
-@home.route('/table')
-def table():
-    return render_template('table.html',title='Table')
 
 @home.route('/traintable')
 def traintable():
