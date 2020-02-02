@@ -81,13 +81,13 @@
       <table class="table table-bordered table-hover" style="text-align: center; border-radius: 4px;"
         role="presentation">
         <thead>
-          <tr>
+          <tr style="vertical-align: middle;">
             <th class="text-base" colspan="1">Incoming Tweet</th>
             <th class="text-base" colspan="2">Tweet Legitimacy</th>
           </tr>
         </thead>
         <tbody>
-          <tr >
+          <tr>
             <td class="text-base" style="text-align: center;" colspan="1" width="700">
               {% block toastmaster %}
               <div class="toast mx-auto" style="align-self: center;" data-autohide="false">
@@ -100,8 +100,8 @@
               </div>
               {% endblock toastmaster %}
             </td>
-            <td class="text-base" style="text-align: center;" colspan="1"> 100%</td>
-            <td class="text-base" style="text-align: center;" colspan="1">0%</td>
+            <td class="text-base" style="text-align: center; vertical-align: middle;" colspan="1"> 100%</td>
+            <td class="text-base" style="text-align: center; vertical-align: middle;" colspan="1">0%</td>
           </tr>
         </tbody>
       </table>
