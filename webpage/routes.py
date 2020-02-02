@@ -10,6 +10,10 @@ def homepage():
 def table():
     return render_template('table.html',title='Table')
 
+@home.route('/traintable')
+def traintable():
+    return render_template('traintable.html',title='TrainingTable')
+
 @home.route('/heatmap')
 def heatmap():
     return render_template('heatmap.html',title='Heatmap')
