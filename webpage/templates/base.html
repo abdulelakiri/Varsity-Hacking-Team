@@ -22,8 +22,7 @@
 </head>
 
 
-<body>
-
+<body style="overflow: scroll;">
   <div class="bg-dark text-white navbar-dark">
     <div class="container-fluid">
       <nav class="navbar px-auto navbar-expand-lg navbar-dark bg-dark">
@@ -33,8 +32,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
+            <h1>TheMonocle</h1>
             <!-- link page using url_for to print url location for DBD_request -->
-            <a href="{{ url_for('site.homepage') }}" class="pl-md-0 p-3 text-white">Home</a>
+            <a href="{{ url_for('site.homepage') }}" class="pl-1 md-0 p-3 text-white">Home</a>
             <a href="{{ url_for('site.heatmap') }}" class="pl-md-0 p-3 text-white">Heat Map</a>
           </div>
         </div>
@@ -44,9 +44,10 @@
   <div class="content">
     <!-- Define block content location to easily replace contents of page -->
     {% block content %}
+    {% block main %}
     <div class="jumbotron bg-dark text-white mb-0">
       <div class="container">
-        <h1 class="display-3 text-light">The Monocle</h1>
+        <h1 class="display-2 text-light">Alert yourself to imminent dangers around you.</h1>
         <div class="lead mb-3">Your key to monitoring disasters in real time, with live feedback from users.
         </div>
         {% block trainingbuttonmode %}
@@ -57,6 +58,7 @@
         {% endblock trainingbuttonmode %}
       </div>
     </div>
+    {% endblock main %}
     {% block tablediv %}
     <div class="container mt-4">
       <div class="row">
@@ -121,7 +123,45 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin="">
+    </script>
+  <script>
+    var mbURL = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}';
+    var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+    var mbToken = 'pk.eyJ1Ijoicm9uYWxkOTh5IiwiYSI6ImNrNjN6ajdxaTBmYzUzcGxoc3l3aXdqMDQifQ.RzcSaJP8F3Cy4-fvfVk1hA';
 
+    var grayscale = L.tileLayer(mbURL, {
+      id: 'mapbox/light-v9',
+      attribution: mbAttr,
+      accessToken: mbToken
+    }),
+      satellite = L.tileLayer(mbURL, {
+        id: 'mapbox/satellite-v9',
+        attribution: mbAttr,
+        accessToken: mbToken
+      }),
+      streets = L.tileLayer(mbURL, {
+        id: 'mapbox/streets-v11',
+        attribution: mbAttr,
+        accessToken: mbToken
+      });
+
+    var baseLayers = {
+      'Streets': streets,
+      'Satellite': satellite,
+      'Grayscale': grayscale
+    };
+
+    var mymap = L.map('mapid', {
+      center: [44.23, -76.48],
+      zoom: 12,
+      layers: streets
+    });
+
+    L.control.layers(baseLayers).addTo(mymap);
+  </script>
   <script>
     $(document).ready(function () {
       $('.toast').toast('show');
