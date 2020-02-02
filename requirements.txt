@@ -1,2 +1,6 @@
 Flask
 gunicorn
+tensorflow
+keras
+seaborn
+tensorflow-hub
