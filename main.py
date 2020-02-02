@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 from webpage.routes import home, page_not_found
 
 app = Flask(__name__)
