@@ -1,17 +1,12 @@
 {% extends 'base.html' %}
-{% block content %}
-<div class="jumbotron bg-dark text-white mb-0">
-  <div class="container">
-    <h1 class="display-3 text-light">The Monocle</h1>
-    <div class="lead mb-3">Your key to monitoring disasters in real time, with live feedback from users.          
-    </div>   
-    <button type="button" class="btn btn-primary" style="border-radius: 4px;" >
-      <a href="{{ url_for('site.homepage') }}" 
-      class="pl-md-0 text-white">Deactivate Training Mode</a>
-    </button>
-    <!--If possible, include overlays for explaining what training mode is-->     
-  </div>
-</div>  
+{% block trainingbuttonmode %}
+<button type="button" class="btn btn-primary" style="border-radius: 4px;" >
+  <a href="{{ url_for('site.traintable') }}" 
+  class="pl-md-0 text-white">Deactivate Training Mode</a>
+</button>
+<!--If possible, include overlays for explaining what training mode is-->   
+{% endblock trainingbuttonmode %}
+{% block tablediv %} 
 <div class="container mt-4 border-radius: 4px;">    
   <div class="row">
     <div class="col-sm-10"></div>
