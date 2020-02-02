@@ -4,3 +4,4 @@ tensorflow
 keras
 seaborn
 tensorflow-hub
+flask_sqlalchemy
