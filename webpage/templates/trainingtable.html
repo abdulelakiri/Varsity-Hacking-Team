@@ -12,22 +12,28 @@
     <!--If possible, include overlays for explaining what training mode is-->     
   </div>
 </div>  
-<table class="table">
-    <thead>
-      <tr>
-        <th class="text-base" style="text-align: center;">Incoming Tweet</th>
-        <th class="text-success" style="text-align: center;">Real Percentage</th>
-        <th class="text-danger" style="text-align: center;">False Percentage</th>
-        <th style="text-align: center;">
-          <button type="button" class="btn btn-success" >Accurate Information</button>
-        </th>
-        <th style="text-align: center;">
-          <button type="button" class="btn btn-danger" >False Information</button>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-
-    </tbody>
-  </table>
+<div class="container border mt-4 ">
+  <div class="container mx-auto mt-4" style="width: 1100px;"> 
+    <table class="table table-bordered table-hover" style="text-align: center;">
+      <thead>
+        <tr>
+          <th class="text-base" colspan="1">Incoming Tweet</th>
+          <th class="text-base" colspan="2">Tweet Legitimacy</th>
+          <th class="text-base" colspan="2">Information Accuracy</th>          
+        </tr>
+      </thead>
+      <tbody>
+        <td class="text-base" style="text-align: center;" colspan="1" width="700">Smith's Feet</td>
+        <td class="text-base" style="text-align: center;" colspan="1"> 100%</td>
+        <td class="text-base" style="text-align: center;" colspan="1" >0%</td>
+        <td class="text-base" style="text-align: center;" colspan="1" width="100">
+          <button type="button" class="btn btn-success">Accurate</button>
+        </td>
+        <td class="text-base" style="text-align: center;" colspan="1" width="100">
+          <button type="button" class="btn btn-danger">False</button>
+        </td>
+      </tbody>
+    </table>
+  </div>
+</div>  
 {% endblock %}
