@@ -7,8 +7,6 @@
 <!--If possible, include overlays for explaining what training mode is-->   
 {% endblock trainingbuttonmode %}
 
-{% block toastmaster %} {{ super() }}{% endblock toastmaster %}
-
 {% block tablediv %} 
 <div class="container mt-4 border-radius: 4px;">    
   <div class="row">
@@ -38,7 +36,9 @@
         </tr>
       </thead>
       <tbody>
-        <td class="text-base" style="text-align: center;" colspan="1" width="700">Smith's Feet</td>
+        <td class="text-base" style="text-align: center;" colspan="1" width="700">
+          {% block toastmaster %}    {{ super() }}{% endblock toastmaster %}
+        </td>
         <td class="text-base" style="text-align: center;" colspan="1"> 100%</td>
         <td class="text-base" style="text-align: center;" colspan="1" >0%</td>
         <td class="text-base" style="text-align: center;" colspan="1" width="100">
