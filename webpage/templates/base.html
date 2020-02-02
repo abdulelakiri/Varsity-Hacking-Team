@@ -2,24 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<style>
-  table.roundedCorners { 
-    border: 1px solid limegreen;
-    border-radius: 13px; 
-    border-spacing: 0;
-    }
-  table.roundedCorners td, 
-  table.roundedCorners th { 
-    border: 1px solid limegreen;
-    padding: 10px; 
-    }
-  table.roundedCorners thead {
-    border-bottom: 1px solid limegreen;
-  }
-  table.roundedCorners tr:last-child > td {
-    border-bottom: none;
-  }
-</style>
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -76,7 +59,7 @@
       </div>
     </div>
     {% block tablediv %}
-    <div class="container mt-4" style="border-radius: 4px;">
+    <div class="container mt-4">
       <div class="row">
         <div class="col-sm-10"></div>
         <div class="col-sm-2">
@@ -93,9 +76,7 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="container mx-auto mt-4" style="width: 1100px;">
-      <table class="roundedCorners" style="text-align: center; border-radius: 15px;">
+      <table class="table table-bordered table-hover mx-auto mt-4" style="text-align: center;">
         <thead>
           <tr style="vertical-align: middle;">
             <th class="text-base" colspan="1">Incoming Tweet</th>

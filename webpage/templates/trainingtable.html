@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 {% block trainingbuttonmode %}
-<button type="button" class="btn btn-primary" style="border-radius: 4px;" >
-  <a href="{{ url_for('site.homepage') }}" 
-  class="pl-md-0 text-white">Deactivate Training Mode</a>
+<button type="button" class="btn btn-primary" style="border-radius: 4px;">
+  <a href="{{ url_for('site.homepage') }}" class="pl-md-0 text-white">Deactivate Training Mode</a>
 </button>
-<!--If possible, include overlays for explaining what training mode is-->   
+<!--If possible, include overlays for explaining what training mode is-->
 {% endblock trainingbuttonmode %}
 
-{% block tablediv %} 
-<div class="container mt-4 border-radius: 4px;">    
+{% block tablediv %}
+<div class="container mt-4 border-radius: 4px;">
   <div class="row">
     <div class="col-sm-10"></div>
     <div class="col-sm-2">
       <div class="dropdown">
-        <button type="button" style="border-radius: 4px;" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        <button type="button" style="border-radius: 4px;" class="btn btn-primary dropdown-toggle"
+          data-toggle="dropdown">
           Filter By:
         </button>
         <div class="dropdown-menu">
@@ -24,31 +24,27 @@
       </div>
     </div>
   </div>
-</div>  
-<div>  
-  <div class="container mx-auto mt-4" style="width: 1100px;"> 
-    <table class="roundedCorners table-bordered table-hover" style="text-align: center;">
-      <thead>
-        <tr>
-          <th class="text-base" colspan="1">Incoming Tweet</th>
-          <th class="text-base" colspan="2">Tweet Legitimacy</th>
-          <th class="text-base" colspan="2">Information Accuracy</th>          
-        </tr>
-      </thead>
-      <tbody>
-        <td class="text-base" style="text-align: center;" colspan="1" width="700">
-          {% block toastmaster %}    {{ super() }}{% endblock toastmaster %}
-        </td>
-        <td class="text-base" style="text-align: center; vertical-align: middle;" colspan="1"> 100%</td>
-        <td class="text-base" style="text-align: center; vertical-align: middle;" colspan="1" >0%</td>
-        <td class="text-base" style="text-align: center; vertical-align: middle;" colspan="1" width="100">
-          <button type="button" class="btn btn-success" style="border-radius: 4px;">Accurate</button>
-        </td>
-        <td class="text-base" style="text-align: center; vertical-align: middle;" colspan="1" width="100">
-          <button type="button" class="btn btn-danger" style="border-radius: 4px;">False</button>
-        </td>
-      </tbody>
-    </table>
-  </div>
-</div>  
+  <table class="table table-bordered table-hover mx-auto mt-4" style="text-align: center;">
+    <thead>
+      <tr>
+        <th class="text-base" colspan="1">Incoming Tweet</th>
+        <th class="text-base" colspan="2">Tweet Legitimacy</th>
+        <th class="text-base" colspan="2">Information Accuracy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <td class="text-base" style="text-align: center;" colspan="1" width="700">
+        {% block toastmaster %} {{ super() }}{% endblock toastmaster %}
+      </td>
+      <td class="text-base" style="text-align: center; vertical-align: middle;" colspan="1"> 100%</td>
+      <td class="text-base" style="text-align: center; vertical-align: middle;" colspan="1">0%</td>
+      <td class="text-base" style="text-align: center; vertical-align: middle;" colspan="1" width="100">
+        <button type="button" class="btn btn-success" style="border-radius: 4px;">Accurate</button>
+      </td>
+      <td class="text-base" style="text-align: center; vertical-align: middle;" colspan="1" width="100">
+        <button type="button" class="btn btn-danger" style="border-radius: 4px;">False</button>
+      </td>
+    </tbody>
+  </table>
+</div>
 {% endblock tablediv %}
