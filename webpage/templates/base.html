@@ -87,13 +87,23 @@
               <th class="text-base" colspan="2">Tweet Legitimacy</th>
             </tr>
           </thead>
-          <tbody>
-            <td class="text-base" style="text-align: center;" colspan="1" width="700">Smith's Feet</td>
+          <tbody>            
+            <td class="text-base" style="text-align: center;" colspan="1" width="700">
+              {% block toastmaster %}
+              <div class="toast">
+                <div class="toast-header" data-autohide="false">
+                  Twitter
+                </div>
+                <div class="toast-body">
+                  TwitterAPI Twitter tweet goes here.
+                </div>
+              </div>
+              {% endblock toastmaster %}
+            </td>
             <td class="text-base" style="text-align: center;" colspan="1"> 100%</td>
             <td class="text-base" style="text-align: center;" colspan="1" >0%</td>           
             </td>
-          </tbody>
-        </table>
+          </tbody>        </table>
       </div>
       {% endblock tablediv %}
     {% endblock content %}
@@ -109,10 +119,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
   </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+  </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
 
+  <script>
+    $(document).ready(function(){
+      $('.toast').toast('show');
+    });
+  </script>
 </body>
 
 </html>

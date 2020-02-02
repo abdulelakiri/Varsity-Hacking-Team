@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 {% block trainingbuttonmode %}
 <button type="button" class="btn btn-primary" style="border-radius: 4px;" >
-  <a href="{{ url_for('site.traintable') }}" 
+  <a href="{{ url_for('site.homepage') }}" 
   class="pl-md-0 text-white">Deactivate Training Mode</a>
 </button>
 <!--If possible, include overlays for explaining what training mode is-->   
 {% endblock trainingbuttonmode %}
+{% block toastmaster %}
+{{ super() }}
+{% endblock toastmaster %}
 {% block tablediv %} 
 <div class="container mt-4 border-radius: 4px;">    
   <div class="row">
@@ -48,4 +51,4 @@
     </table>
   </div>
 </div>  
-{% endblock %}
+{% endblock tablediv %}
