@@ -12,7 +12,7 @@ def table():
 
 @home.route('/traintable')
 def traintable():
-    return render_template('traintable.html',title='TrainingTable')
+    return render_template('trainingtable.html',title='TrainingTable')
 
 @home.route('/heatmap')
 def heatmap():

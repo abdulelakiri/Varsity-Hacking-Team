@@ -1,6 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-  <table class="table">
+<div class="jumbotron bg-dark text-white mb-0">
+  <div class="container">
+    <h1 class="display-3 text-light">Disaster Event Monitor</h1>
+    <div class="lead mb-3">Your key to monitoring disasters in real time, including Smith's feet.          
+    </div>   
+    <button type="button" class="btn btn-primary" style="border-radius: 4px;" >
+      <a href="{{ url_for('site.homepage') }}" 
+      class="pl-md-0 text-white">Deactivate Training Mode</a>
+    </button>
+    <!--If possible, include overlays for explaining what training mode is-->     
+  </div>
+</div>  
+<table class="table">
     <thead>
       <tr>
         <th class="text-base" style="text-align: center;">Incoming Tweet</th>
